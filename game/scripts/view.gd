@@ -41,23 +41,24 @@ func handle_input(_delta):
 	
 	camera_position += input / 4
 	
-	# Zoom in/out
-	
-	if Input.is_action_just_released("zoom_in"):
-		zoom = max(15, zoom - 5) # 15 = Minimum zoom level, in meters
-		
-	if Input.is_action_just_released("zoom_out"):
-		zoom = min(80, zoom + 5) # 80 = Maximum zoom level, in meters
-	
 	# Back to center
 	
 	if Input.is_action_pressed("camera_center"):
 		camera_position = Vector3()
 
 func _input(event):
-	
+
 	# Rotate camera using mouse (hold 'middle' mouse button)
-	
+
 	if event is InputEventMouseMotion:
 		if Input.is_action_pressed("camera_rotate"):
 			camera_rotation += Vector3(0, -event.relative.x / 10, 0)
+
+	# Zoom with mouse wheel — handled in _input so wheel events fire reliably
+	# and aren't consumed by Control nodes (e.g. the Shop's ScrollContainer).
+
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			zoom = max(15, zoom - 5)
+		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			zoom = min(80, zoom + 5)
