@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Structure" load_steps=3 format=3 uid="uid://bh65eqgid4kxy"]
+
+[ext_resource type="PackedScene" uid="uid://m74mvao50wnm" path="res://models/building-small-c.glb" id="1_6yyww"]
+[ext_resource type="Script" uid="uid://b4i7dfy6u3e8w" path="res://scripts/structure.gd" id="2_rkiq0"]
+
+[resource]
+script = ExtResource("2_rkiq0")
+model = ExtResource("1_6yyww")
+price = 350
+display_name = "Apartment"
+category = "Residential"
+description = "Multi-family housing"
+sim_role = 1
+population_capacity = 20
+power_consumes = 6
+upkeep_per_day = 15

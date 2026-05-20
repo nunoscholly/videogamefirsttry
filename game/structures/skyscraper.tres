@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Structure" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/structure.gd" id="1_struct"]
+[ext_resource type="PackedScene" path="res://models/skyscraper.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_struct")
+model = ExtResource("2_model")
+price = 900
+display_name = "Skyscraper"
+category = "Residential"
+description = "Dense housing for 50"
+sim_role = 1
+population_capacity = 50
+power_consumes = 14
+upkeep_per_day = 35

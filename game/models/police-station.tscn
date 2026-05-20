@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3]
+
+[sub_resource type="StandardMaterial3D" id="mat_police"]
+albedo_color = Color(0.18, 0.32, 0.55, 1)
+roughness = 0.75
+
+[sub_resource type="BoxMesh" id="BoxMesh_police"]
+material = SubResource("mat_police")
+size = Vector3(0.85, 0.55, 0.85)
+
+[node name="PoliceStation" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275, 0)
+mesh = SubResource("BoxMesh_police")

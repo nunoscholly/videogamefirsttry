@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Structure" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/structure.gd" id="1_struct"]
+[ext_resource type="PackedScene" path="res://models/police-station.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_struct")
+model = ExtResource("2_model")
+price = 300
+display_name = "Police Station"
+category = "Safety"
+description = "Covers 6 tiles"
+sim_role = 4
+power_consumes = 2
+upkeep_per_day = 15
+is_police = true
+police_radius = 6

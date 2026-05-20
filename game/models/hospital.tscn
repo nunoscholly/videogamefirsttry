@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3]
+
+[sub_resource type="StandardMaterial3D" id="mat_hosp"]
+albedo_color = Color(0.92, 0.92, 0.94, 1)
+roughness = 0.55
+
+[sub_resource type="BoxMesh" id="BoxMesh_hosp"]
+material = SubResource("mat_hosp")
+size = Vector3(0.88, 0.7, 0.88)
+
+[node name="Hospital" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
+mesh = SubResource("BoxMesh_hosp")

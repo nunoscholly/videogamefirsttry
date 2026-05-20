@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3]
+
+[sub_resource type="StandardMaterial3D" id="mat_barracks"]
+albedo_color = Color(0.35, 0.42, 0.32, 1)
+roughness = 0.88
+
+[sub_resource type="BoxMesh" id="BoxMesh_barracks"]
+material = SubResource("mat_barracks")
+size = Vector3(0.92, 0.65, 0.72)
+
+[node name="Barracks" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.325, 0)
+mesh = SubResource("BoxMesh_barracks")

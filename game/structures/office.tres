@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Structure" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/structure.gd" id="1_struct"]
+[ext_resource type="PackedScene" path="res://models/office.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_struct")
+model = ExtResource("2_model")
+price = 260
+display_name = "Office"
+category = "Commercial"
+description = "10 white-collar jobs"
+sim_role = 2
+jobs = 10
+power_consumes = 3
+upkeep_per_day = 11

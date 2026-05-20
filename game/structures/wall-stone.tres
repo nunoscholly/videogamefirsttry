@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Structure" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/structure.gd" id="1_struct"]
+[ext_resource type="PackedScene" path="res://models/wall-stone.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_struct")
+model = ExtResource("2_model")
+price = 12
+display_name = "Stone Wall"
+category = "Infrastructure"
+description = "Low boundary wall"

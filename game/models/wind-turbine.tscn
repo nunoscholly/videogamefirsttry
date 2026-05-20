@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3]
+
+[sub_resource type="StandardMaterial3D" id="mat_wind"]
+albedo_color = Color(0.95, 0.95, 0.95, 1)
+roughness = 0.5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wind"]
+material = SubResource("mat_wind")
+top_radius = 0.07
+bottom_radius = 0.12
+height = 1.5
+radial_segments = 12
+
+[node name="WindTurbine" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+mesh = SubResource("CylinderMesh_wind")

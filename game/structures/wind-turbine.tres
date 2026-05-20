@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Structure" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/structure.gd" id="1_struct"]
+[ext_resource type="PackedScene" path="res://models/wind-turbine.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_struct")
+model = ExtResource("2_model")
+price = 200
+display_name = "Wind Turbine"
+category = "Power"
+description = "+10 power, clean"
+sim_role = 3
+power_produces = 10
+upkeep_per_day = 5

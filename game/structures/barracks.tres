@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Structure" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/structure.gd" id="1_struct"]
+[ext_resource type="PackedScene" path="res://models/barracks.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_struct")
+model = ExtResource("2_model")
+price = 450
+display_name = "Barracks"
+category = "Military"
+description = "Military patrol, radius 9"
+sim_role = 4
+power_consumes = 3
+upkeep_per_day = 22
+is_police = true
+police_radius = 9
