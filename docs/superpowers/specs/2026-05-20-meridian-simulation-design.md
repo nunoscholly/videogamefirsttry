@@ -22,14 +22,14 @@ Real-time ticks at 1× / 2× / 4× / pause. One in-game day ≈ 1.5 s of real ti
 
 Detailed formulas:
 
-- **Occupancy rate** = clamp((happiness − 20) / 50, 0, 1). Pop target = `Σ residential_capacity × occupancy_rate`. Population lerps toward target at 3 citizens/day.
+- **Occupancy rate** = clamp((happiness − 20) / 50, 0, 1). Pop target = `Σ residential_capacity × occupancy_rate`. Population moves toward target by at most 3 citizens/day (cap, not factor); rounded to int after applying.
 - **Blackout pct** = max(0, demand − supply) / max(demand, 1). Affects all buildings globally (no per-tile power routing in v0.1).
 - **Happiness target** = `60 + jobs_bonus − blackout_penalty − unsafety_penalty + amenity_bonus`, where:
   - jobs_bonus = +5 if jobs_filled / pop ≥ 0.7, else 0; -15 if pop > 0 and jobs_offered = 0.
   - blackout_penalty = 15 × blackout_pct.
   - unsafety_penalty = 10 × (1 − safety_coverage_pct).
   - amenity_bonus = clamp(amenity_count × 100 / max(pop, 1), 0, 10).
-- **Happiness** lerps toward target at 5/day.
+- **Happiness target** is clamped to [0, 100]. **Happiness** moves toward target by at most 5/day (cap, not factor) and is clamped to [0, 100].
 - **Daily income** = `population × $0.5 + jobs_filled × $0.3`. **Daily upkeep** = `Σ building.upkeep`.
 
 ## Fail states
